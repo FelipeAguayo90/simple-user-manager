@@ -1,0 +1,28 @@
+html
+    head
+        link(rel='stylesheet', href='/styles.css')
+        title User Manager
+    body 
+        h1 Create User
+        div(class='form')
+            form(method='POST', action='/users/create')
+                fieldset 
+                    legend User Info
+                    div 
+                        label(for='username') Username: 
+                        input(id='username', name='username' type='text')
+                    div 
+                        label(for='name') Name:
+                        input(id='name', name='name' type='text')
+                    div 
+                        label(for='email') Email:
+                        input(id='email', name='email' type='email')
+                    div 
+                        label(for='age') Age:
+                        input(id='age', name='age' type='number')
+                    div(class='btn-container')
+                        input(type='submit' value='Add user' class='btn')
+                if errorMessage
+                    .alert.alert-danger= errorMessage
+
+

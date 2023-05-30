@@ -1,0 +1,28 @@
+html
+    head
+        link(rel='stylesheet', href='/styles.css')
+        title User Manager
+    body 
+        h1= user.name
+        div(class='form')
+            form(method='POST', action=`/users/${user.id}/edit`)
+                fieldset 
+                    legend Update User Info
+                    div 
+                        label(for='username') Username: 
+                        input(id='username', name='username' type='text' value= user.username)
+                    div 
+                        label(for='name') Name:
+                        input(id='name', name='name' type='text' value= user.name)
+                    div 
+                        label(for='email') Email:
+                        input(id='email', name='email' type='email' value= user.email)
+                    div 
+                        label(for='age') Age:
+                        input(id='age', name='age' type='number' value= user.age)
+                    div(class='btn-container') 
+                        input(type='submit' value='Update' class='btn')
+                if errorMessage
+                    .alert.alert-danger= errorMessage
+
+
