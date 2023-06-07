@@ -1,8 +1,14 @@
 version: '3.8'
 services:
-  mywebsite:
+  my1stwebsite:
     image: user-manager:latest
     ports:
-      - 3000:8080
+      - 3000:3000
     deploy:
-      replicas: 4
+      replicas: 3
+  my2stwebsite:
+    image: user-manager:latest
+    ports:
+      - 3001:3000
+    deploy:
+      replicas: 2
